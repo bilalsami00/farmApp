@@ -25,7 +25,7 @@
         android:id="@+id/login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="116dp"
         android:text="login"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -80,8 +80,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@android:color/holo_green_light"
+        android:backgroundTint="@android:color/holo_green_dark"
         android:text="login"
+        android:textAlignment="center"
         android:textColor="@color/white"
         app:backgroundTint="@color/design_default_color_primary_dark"
         app:layout_constraintEnd_toEndOf="@+id/password"
@@ -126,8 +127,10 @@
         android:layout_height="81dp"
         app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="@+id/heading"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/heading"
         app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintVertical_bias="0.149"
         app:srcCompat="@drawable/tractor" />
 
 
