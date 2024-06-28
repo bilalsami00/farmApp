@@ -1,11 +1,16 @@
 package com.example.farmapp;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -15,6 +20,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    private EditText mobileNumberEditText;
+    private EditText passwordEditText;
     private TextView clickHere;
     private PopupWindow popupWindow;
     private ConstraintLayout mainLayout;
@@ -31,11 +38,19 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Initialize the "Click here" link and main layout
+        mobileNumberEditText = findViewById(R.id.mobileNumber);
+        passwordEditText = findViewById(R.id.password);
         clickHere = findViewById(R.id.clickHere);
         mainLayout = findViewById(R.id.main);
 
-        // Set up the click listener for the "Click here" link
+        Button loginBtn = findViewById(R.id.loginBtn);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validateAndLogin();
+            }
+        });
+
         clickHere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,24 +59,45 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void validateAndLogin() {
+        String mobileNumber = mobileNumberEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+
+        if (TextUtils.isEmpty(mobileNumber) || mobileNumber.length() != 11) {
+            mobileNumberEditText.setError("Please enter a valid mobile number (11 digits)");
+            return;
+        }
+
+        if (TextUtils.isEmpty(password)) {
+            passwordEditText.setError("Please enter your password");
+            return;
+        }
+
+        // Assuming login logic here, for now showing a toast
+        Toast.makeText(this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+    }
+
     private void showSignupPopup() {
-        // Inflate the popup layout using register.xml
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.activity_register, null);
 
-        // Create the popup window
         int width = ViewGroup.LayoutParams.MATCH_PARENT;
         int height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true; // Lets taps outside the popup also dismiss it
+        boolean focusable = true;
         popupWindow = new PopupWindow(popupView, width, height, focusable);
 
-        // Show the popup window
+        popupWindow.setAnimationStyle(R.style.PopupAnimation);
         popupWindow.showAtLocation(mainLayout, android.view.Gravity.CENTER, 0, 0);
 
-        // Close the popup when touched outside
         popupView.setOnTouchListener((v, event) -> {
             popupWindow.dismiss();
             return true;
+        });
+
+        Button registerBtn = popupView.findViewById(R.id.registerBtn);
+        registerBtn.setOnClickListener(v -> {
+            Toast.makeText(MainActivity.this, "Signed up successfully", Toast.LENGTH_SHORT).show();
+            popupWindow.dismiss();
         });
     }
 }
