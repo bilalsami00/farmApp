@@ -90,7 +90,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:backgroundTint="@android:color/holo_green_light"
+        android:backgroundTint="@android:color/holo_green_dark"
         android:text="Register"
         android:textColor="@android:color/white"
         app:backgroundTint="@color/design_default_color_primary_dark"
