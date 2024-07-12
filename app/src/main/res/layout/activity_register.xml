@@ -21,8 +21,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Logo -->
-
     <!-- Register heading -->
     <TextView
         android:id="@+id/heading"
@@ -33,15 +31,16 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06999999" />
+        app:layout_constraintVertical_bias="0.012" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="112dp"
         android:layout_height="81dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/heading"
         app:layout_constraintStart_toStartOf="@+id/heading"
         app:layout_constraintTop_toBottomOf="@+id/heading"
@@ -51,7 +50,7 @@
         android:id="@+id/registerHeading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="100dp"
         android:text="Register"
         android:textAlignment="center"
         android:textColor="@android:color/white"
@@ -63,7 +62,7 @@
 
     <!-- First Name EditText -->
     <EditText
-        android:id="@+id/FirstName"
+        android:id="@+id/firstName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -98,7 +97,7 @@
         android:textColorHint="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/FirstName" />
+        app:layout_constraintTop_toBottomOf="@id/firstName" />
 
     <!-- Mobile Number EditText -->
     <EditText
@@ -109,10 +108,10 @@
         android:background="@drawable/input_bg"
         android:drawableLeft="@android:drawable/stat_sys_phone_call"
         android:drawablePadding="5dp"
-        android:ems="10"
+        android:ems="12"
         android:hint="Mobile Number"
         android:inputType="phone"
-        android:maxLength="11"
+        android:maxLength="12"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -142,6 +141,45 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mobileNumber" />
 
+    <!-- Confirm Password EditText -->
+    <EditText
+        android:id="@+id/confirmPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+        android:drawablePadding="5dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColorHint="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password" />
+
+    <!-- Account Holder ID EditText -->
+    <EditText
+        android:id="@+id/accountHolderID"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/input_bg"
+        android:hint="Account Holder ID"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColorHint="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirmPassword" />
+
     <!-- Register Button -->
     <Button
         android:id="@+id/registerBtn"
@@ -153,7 +191,24 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password" />
+        app:layout_constraintTop_toBottomOf="@id/accountHolderID" />
+
+    <!-- OTP Confirmation Link -->
+    <TextView
+        android:id="@+id/confirmOtpLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Do you want to confirm OTP? Click here"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
