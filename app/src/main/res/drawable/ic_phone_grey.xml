@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap
+            android:src="@android:drawable/stat_sys_phone_call"
+            android:tint="@color/grey"/>
+    </item>
+</layer-list>

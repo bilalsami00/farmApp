@@ -3,4 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="dark_red">#8B0000</color>
+    <color name="red_pink">#E3294E</color>
+
+    <color name="bright_yellow">#8B0000</color>
+
+    <color name="grey">#B0B0B0</color>
+    <color name="primaryColor">#6200EE</color>
+
 </resources>
